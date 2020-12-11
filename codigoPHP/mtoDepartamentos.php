@@ -59,7 +59,7 @@
             
             $errorDescDepartamento = null; // inciializo la variable de errores de la descripcion del departamento
             
-            $descDepartamento = null; // inciializo la variable de la descripcion del departamento
+            $descDepartamento = null; // incializo la variable de la descripcion del departamento
         ?>
         
             <form  class="buscador" name="formularioBuscador" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
@@ -118,11 +118,11 @@
                     
                     $consultaDepartamentosLimit->execute($parametros); // ejecuto la consulta con los paremtros del array de parametros 
                     
-                    $sqlNumeroDepartamentos = 'SELECT count(*) FROM Departamento';
+                    $sqlNumeroDepartamentos = 'SELECT count(*) FROM Departamento WHERE DescDepartamento LIKE "%":DescDepartamento"%"';
                     
                     $consultaNumeroDepartamentos = $miDB->prepare($sqlNumeroDepartamentos); // preparo la consulta
-                    
-                    $consultaNumeroDepartamentos->execute(); // ejecuto la consulta con los paremtros del array de parametros 
+                    $parametrosNumDepartamentos = [":DescDepartamento" => $descDepartamento];
+                    $consultaNumeroDepartamentos->execute($parametrosNumDepartamentos); // ejecuto la consulta con los parametros del array de parametros 
                     
                     $resultado = $consultaNumeroDepartamentos->fetch(); // devuelve el numero de departamentos que hay en la posicion 0 de un array
                     

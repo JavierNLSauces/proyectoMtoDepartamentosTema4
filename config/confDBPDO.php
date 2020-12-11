@@ -7,7 +7,7 @@
 
 /*
 // Conexion con entorno de desarrollo
-define('DNS','mysql:host=192.168.43.217:3306;dbname=DAW217DBDepartamentos'); // Direccion del host y nombre de la base de datos para la conexion con la base de datos
+define('DNS','mysql:host=192.168.8.217:3306;dbname=DAW217DBDepartamentos'); // Direccion del host y nombre de la base de datos para la conexion con la base de datos
 define('USER','usuarioDAW217DBDepartamentos'); // Usuario administrador de la bsae de datos DAW217DBDepartamentos
 define('PASSWORD','P@ssw0rd'); // Contraseña de usuario administrador de la base de datos DAW217DBDepartamentos
 
